@@ -10,3 +10,5 @@ This is by no means complete, just a few templates to demonstrate the process of
 On the subject of templates, these are a bit mangled as I was trying out some ideas for structuring templates.
 
 Oh, and it uses Tailwind CDN just for speed. Not keen.
+
+Images and product names belong to Dominos and are used here for simple demonstration purposes.
