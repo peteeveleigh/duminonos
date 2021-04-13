@@ -1,0 +1,18 @@
+{% extends('_layouts/base') %}
+
+{% block main %}
+	<div class="mb-5 shadow-sm border">
+	{% block image %}{% endblock %}
+	</div>
+	
+	<div class="grid grid-cols-2 gap-5">
+		<div>
+		{% block description %}{% endblock %}
+		</div>
+		
+		<div class="bg-gray-100 shadow p-3">
+		{% block purchase %}
+		{% endblock %}
+		</div>
+	</div>
+{% endblock %}

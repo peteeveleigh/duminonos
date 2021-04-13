@@ -1,0 +1,15 @@
+<header class="">
+	
+	<h1 class="text-5xl font-bold text-center uppercase text-red-600 mt-8 mb-8"><a href="/">Duminonos</a></h1>
+	
+	<div class="bg-gradient-to-t from-blue-800 to-blue-500 text-white shadow">
+		<div class="max-w-5xl m-auto  items-center ">
+			<nav class="ml-5 flex justify-between items-end uppercase">
+				<div class="flex-1 p-2 pl-0">Delivery: AB123CD</div>
+				<a class="text-xl font-bold flex-1 p-2" href="/menu">Menu</a>
+				<a class="text-xl font-bold flex-1 p-2" href="/deals">Deals</a>
+				<a class="text-xl font-bold flex-1 p-2 hover:bg-blue-500 hover:transform transform-y-4" href="/checkout">{{ cart.total|commerceCurrency(cart.currency) }}</a>
+			</nav>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,60 @@
+{% extends('_layouts/pizza') %}
+
+	{% block image %}
+		{% set image = product.image.one() ?? null %}
+		{% if image %}
+			<img class="w-full" src="{{ image.url }}" alt="{{  image.altText ?? product.title }}">
+		{% endif %}
+	{% endblock %}
+	
+	{% block description %}
+		<h1 class="font-sans text-4xl font-bold">{{ product.title }}</h1>
+		
+		<p class="mb-3 font-bold">
+		{% for topping in product.toppings.all() %}
+			{{ topping }}{{ loop.index != loop.last ? ', '}}
+		{% endfor %}
+		</p>
+		
+		{{ product.description }}
+		
+		
+	{% endblock %}
+	
+	{% block purchase %}
+		<form method="post">
+			{{ csrfInput() }}
+			{{ actionInput('commerce/cart/update-cart') }}
+    		{{ hiddenInput('qty', 1) }}
+			
+			<div class="flex">
+				<div>
+					<label for="size" class="text-lg font-bold uppercase mb-3">Choose size</label>
+					<select id="size" name="purchasableId" class="p-3 border border-gray-400">
+					{% for variant in product.variants %}
+						<option value="{{ variant.id }}">{{ variant.title }} {{ variant.salePrice|commerceCurrency(cart.currency) }}</option>
+					{% endfor %}
+					</select>
+				</div>
+				
+				<div>
+					<label for="qty" class="text-lg font-bold uppercase mb-3">How many?</label>
+					<input class="p-3 border border-gray-400" id="qty" name="qty" type="number" value="1">
+				</div>
+			</div>
+			
+			<div class="mt-5">
+				<h3 class="text-lg font-bold uppercase mb-3">Extra toppings</h3>
+				<div class="grid grid-cols-2 gap-1">
+				{% for topping in craft.products.type('toppings').all() %}
+					<label class="block w-full"><input type="checkbox" name="options[Extra Toppings][]" value="{{ topping.title }}" {% if topping.id in product.toppings.ids() %}checked disabled{% endif %}> {{ topping.title }}</label>
+				{% endfor %}
+				</div>
+			</div>
+			
+			<div class="mt-5">
+			<input type="submit" class="font-bold uppercase rounded-md bg-green-500 pt-3 pb-3 pl-5 pr-5 ring-3 ring-color-green-800 text-white cursor-pointer hover:bg-green-800 hover:ring-color:green-500" value="Add to order">
+			</div>
+		</form>
+	{% endblock %}
+	

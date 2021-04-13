@@ -1,0 +1,118 @@
+descriptionFormat: '{product.title} {title}'
+handle: pizzas
+hasDimensions: false
+hasProductTitleField: true
+hasVariantTitleField: true
+hasVariants: true
+name: Pizzas
+productFieldLayouts:
+  1b856990-bc08-4b03-9917-9dcdded0a09a:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\commerce\fieldlayoutelements\ProductTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4bef74f7-ac49-4c97-9bb2-66dcde4642b2 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3e7f8164-3681-49de-9d39-7ee43cb62825 # Card image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 46262198-26ae-44c9-a60b-e82d34653e79 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7f9d6159-a7ec-489f-82a9-3a0e790de8b1 # Toppings
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\commerce\fieldlayoutelements\VariantsField
+            warning: null
+        name: Content
+        sortOrder: 1
+productTitleFormat: ''
+siteSettings:
+  7c6c0bb5-a83d-4886-bb71-cd44b39b530a: # Craft Dev Site
+    hasUrls: true
+    template: _pizza
+    uriFormat: 'menu/pizza/{slug}'
+skuFormat: '{product.slug}-{title|lower}'
+titleFormat: '{product.title}'
+variantFieldLayouts:
+  3289889c-ff87-4f5a-967f-44fd9df455f2:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\commerce\fieldlayoutelements\VariantTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1

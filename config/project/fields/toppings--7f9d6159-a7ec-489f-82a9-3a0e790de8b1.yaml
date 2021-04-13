@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: dcb33c83-5552-4018-bede-099cfa8ac9d1 # Common
+handle: toppings
+instructions: ''
+name: Toppings
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'productType:80ceccbc-a1d4-4f0e-a89a-b695820c1b0d' # Toppings
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\commerce\fields\Products

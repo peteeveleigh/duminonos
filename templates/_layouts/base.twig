@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% if cart is not defined %}
+	{% set cart = craft.commerce.carts.cart %}
+	{% endif %}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizza</title>
+	
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	{% block header %}
+		{% include('_layouts/header') %}
+	{% endblock %}
+	
+	<div class="max-w-5xl m-auto">
+	{% block main %}
+	{% endblock %}
+	</div>
+	
+	{% block footer %}
+		{% include('_layouts/footer') %}
+	{% endblock %}
+</body>
+</html>

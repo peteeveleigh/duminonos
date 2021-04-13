@@ -1,0 +1,37 @@
+{% extends('_layouts/base') %}
+
+{% set foodType = foodType ?? (craft.app.request.segment(2) ?? 'pizzas') %}
+
+{% block main %}
+    <h1 class="text-5xl text-center uppercase mb-8 mt-8 font-bold text-red-600">{{ foodType | capitalize }}</h1>
+	
+	<div class="grid grid-cols-4 gap-3">
+		{% set products = craft.products.type(foodType) ?? null %}
+		{% if products.count() >= 1 %}
+			{% for product in products.all() %}
+				<div class="shadow-md border">
+					{% set image = product.cardImage.one() %}
+					<a href="{{ product.url }}"><img class="block mb-1" src="{{ image.url }}" alt="{{ image.altText ?? product.title }}" width="100%"></a>
+					
+					<h2 class="text-l font-bold uppercase pl-2 pr-2 mb-1">{{ product.title }}</h2>
+
+					<form method="post">
+						{{ csrfInput() }}
+						{{ actionInput('commerce/cart/update-cart') }}
+							<select name="purchasableId" class="block w-full p-1 mb-2 uppercase text-xs font-bold">
+							{% for variant in product.variants %}
+								<option value="{{ variant.id }}">{{ variant.title }} {{ variant.salePrice|commerceCurrency(cart.currency) }}</option>
+							{% endfor %}
+							</select>
+						
+						<div class="flex gap-3">					
+							<a class="text-xs text-blue-800 font-bold uppercase flex-1 block p-3 pl-4 pr-1  cursor-pointer text-center" href="{{ product.url }}">Customise</a>
+							
+							<input type="submit" class="text-xs font-bold uppercase flex-2 block  bg-green-500 p-3 pl-5 pr-5 text-white cursor-pointer hover:bg-green-800 hover:ring-color:green-500 text-center" value="Add to basket">
+						</div>
+					</form>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+{% endblock %}

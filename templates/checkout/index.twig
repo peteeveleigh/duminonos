@@ -1,0 +1,36 @@
+{% extends('_layouts/checkout') %}
+
+{% block overview %}
+<div class="border shadow p-5">
+	<h2 class="text-2xl text-red-600 font-bold mb-5">Your order</h2>
+	<ul>
+	{% for item in cart.lineitems %}
+		<li class="flex mb-5">
+			<div class="flex-1 border-b border-dotted pb-3">
+				<span class="font-bold">{{ item.purchasable }}</span>
+				{% if item.options %}
+					<div class="italic">
+						<span class="font-bold">Extra toppings: </span>
+						<ul class="inline">
+						{% for topping in item.options['Extra Toppings'] %}
+						<li class="inline">{{ topping }}{{ loop.last == false ? ', ' }}</li>
+						{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</div>
+			
+			<div class="flex-1 text-right border-b border-dotted">
+				{{ item.total|commerceCurrency(cart.currency) }}
+			</div>
+		</li>
+	{% endfor %}
+	</ul>
+	
+	<p class="text-right text-lg font-bold">Total: {{ cart.total|commerceCurrency(cart.currency) }}</p>
+</div>
+{% endblock %}
+
+{% block content %}
+	checkout form 
+{% endblock %}

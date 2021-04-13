@@ -1,0 +1,15 @@
+{% extends('_layouts/base') %}
+
+
+{% block main %}
+	<h1 class="text-center text-4xl font-bold mt-5 mb-5">Checkout</h1>
+	<div class="flex">
+		<div class="flex-1">
+		{% block content %}{% endblock %}
+		</div>
+		
+		<div class="flex-2">
+		{% block overview %}{% endblock %}
+		</div>
+	</div>
+{% endblock %}

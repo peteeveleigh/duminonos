@@ -1,0 +1,45 @@
+descriptionFormat: ''
+handle: sides
+hasDimensions: false
+hasProductTitleField: true
+hasVariantTitleField: false
+hasVariants: false
+name: Sides
+productFieldLayouts:
+  891c628e-d7ef-46dc-9a3a-7fe2e96e7871:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\commerce\fieldlayoutelements\ProductTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+productTitleFormat: ''
+siteSettings:
+  7c6c0bb5-a83d-4886-bb71-cd44b39b530a: # Craft Dev Site
+    hasUrls: true
+    template: ''
+    uriFormat: 'sides/{slug}'
+skuFormat: ''
+titleFormat: '{product.title}'

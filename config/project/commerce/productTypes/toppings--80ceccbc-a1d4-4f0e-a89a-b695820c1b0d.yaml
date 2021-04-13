@@ -1,0 +1,72 @@
+descriptionFormat: '{product.title}'
+handle: toppings
+hasDimensions: false
+hasProductTitleField: true
+hasVariantTitleField: false
+hasVariants: false
+name: Toppings
+productFieldLayouts:
+  8dc8a20d-1e1a-44d9-9c3a-5d388f678070:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\commerce\fieldlayoutelements\ProductTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4bef74f7-ac49-4c97-9bb2-66dcde4642b2 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 46262198-26ae-44c9-a60b-e82d34653e79 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1081b1fd-8594-4863-bdcf-fc221b5b2f4c # Prices
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+productTitleFormat: ''
+siteSettings:
+  7c6c0bb5-a83d-4886-bb71-cd44b39b530a: # Craft Dev Site
+    hasUrls: false
+    template: null
+    uriFormat: null
+skuFormat: '{product.slug}'
+titleFormat: '{product.title}'
